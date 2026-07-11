@@ -42,6 +42,17 @@ function thumbMarkup(game) {
       <span class="card-plays">▶ ${plays}</span>
     </div>`;
   }
+  if (game.thumbKind === "snake-preview") {
+    return `<div class="card-thumb thumb-snake">
+      <span class="ms-seg" style="left:20%;top:52%"></span>
+      <span class="ms-seg" style="left:32%;top:52%"></span>
+      <span class="ms-seg ms-head" style="left:44%;top:52%"></span>
+      <span class="ms-seg" style="left:44%;top:38%"></span>
+      <span class="ms-food" style="left:62%;top:38%"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
   return `<div class="card-thumb" style="background:linear-gradient(135deg, hsl(${game.hue},70%,45%), hsl(${game.hue + 40},70%,30%))">
     ${initials(game.title)}
     ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}

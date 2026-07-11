@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rắn Săn Mồi</title>
+<link rel="stylesheet" href="/mygames/snake/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Rắn Săn Mồi</h1>
+        <p>Ăn mồi để dài ra, đừng đâm vào tường hay chính mình</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Rắn Săn Mồi</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm hoặc nhấn phím mũi tên để bắt đầu</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <div class="dpad" id="dpad">
+      <button class="dpad-btn dpad-up" data-dir="up">▲</button>
+      <button class="dpad-btn dpad-left" data-dir="left">◀</button>
+      <button class="dpad-btn dpad-right" data-dir="right">▶</button>
+      <button class="dpad-btn dpad-down" data-dir="down">▼</button>
+    </div>
+    <p class="hint">Phím mũi tên / vuốt / nút bên dưới để đổi hướng.</p>
+  </div>
+<script src="/mygames/snake/game.js"></script>
+</body>
+</html>

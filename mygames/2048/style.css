@@ -32,7 +32,7 @@ body {
 
 .wrap {
   width: 100%;
-  max-width: 420px;
+  max-width: min(420px, calc(100vh - 200px));
 }
 
 .topline {
