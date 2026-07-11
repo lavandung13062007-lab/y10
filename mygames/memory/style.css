@@ -106,7 +106,8 @@ body {
   transform-style: preserve-3d;
 }
 .mcard.flipped .mcard-inner,
-.mcard.matched .mcard-inner {
+.mcard.matched .mcard-inner,
+.mcard.preview-open .mcard-inner {
   transform: rotateY(180deg);
 }
 .mcard-face {

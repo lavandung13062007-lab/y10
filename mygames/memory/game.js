@@ -7,6 +7,10 @@ const restartBtn = document.getElementById("restartBtn");
 const overlayEl = document.getElementById("overlay");
 const overlayMsgEl = document.getElementById("overlayMsg");
 const overlayBtn = document.getElementById("overlayBtn");
+const hintEl = document.querySelector(".hint");
+
+const PREVIEW_SECONDS = 3;
+const originalHintText = hintEl.textContent;
 
 const SHAPES = [
   { type: "circle", color: "hsl(165,70%,50%)" },
@@ -112,15 +116,38 @@ function finishGame() {
   overlayEl.classList.remove("hidden");
 }
 
+function startPreview() {
+  locked = true;
+  board.querySelectorAll(".mcard").forEach(el => el.classList.add("preview-open"));
+
+  let remaining = PREVIEW_SECONDS;
+  hintEl.textContent = `Ghi nhớ vị trí... bắt đầu sau ${remaining}s`;
+  const countdown = setInterval(() => {
+    remaining--;
+    if (remaining > 0) {
+      hintEl.textContent = `Ghi nhớ vị trí... bắt đầu sau ${remaining}s`;
+    } else {
+      clearInterval(countdown);
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    board.querySelectorAll(".mcard").forEach(el => el.classList.remove("preview-open"));
+    hintEl.textContent = originalHintText;
+    locked = false;
+  }, PREVIEW_SECONDS * 1000);
+}
+
 function newGame() {
   cards = buildDeck();
   flipped = [];
   matchedCount = 0;
   moves = 0;
-  locked = false;
+  locked = true;
   movesEl.textContent = "0";
   overlayEl.classList.add("hidden");
   render();
+  startPreview();
 }
 
 restartBtn.addEventListener("click", newGame);
