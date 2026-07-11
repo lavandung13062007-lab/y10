@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Đập Chuột</title>
+<link rel="stylesheet" href="/mygames/whack/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Đập Chuột</h1>
+        <p>Nhanh tay đập chuột trước khi nó chui xuống</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Thời gian</span>
+          <span class="value" id="timeLeft">30</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board"></div>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Đập Chuột</div>
+        <div class="overlay-msg" id="overlayMsg">30 giây, đập càng nhiều càng tốt</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Bấm/chạm vào chuột ngay khi nó ló lên.</p>
+  </div>
+<script src="/mygames/whack/game.js"></script>
+</body>
+</html>

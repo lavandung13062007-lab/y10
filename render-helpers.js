@@ -54,6 +54,39 @@ function thumbMarkup(game) {
       <span class="card-plays">▶ ${plays}</span>
     </div>`;
   }
+  if (game.thumbKind === "caro-preview") {
+    return `<div class="card-thumb thumb-caro">
+      <div class="mini-caro">
+        <span class="tc x">✕</span><span class="tc o">○</span><span class="tc"></span>
+        <span class="tc"></span><span class="tc x">✕</span><span class="tc o">○</span>
+        <span class="tc o">○</span><span class="tc"></span><span class="tc x">✕</span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "breakout-preview") {
+    return `<div class="card-thumb thumb-breakout">
+      <div class="mini-bricks">
+        <span style="background:#ff6b81"></span><span style="background:#ff9f43"></span><span style="background:#ffd76e"></span>
+        <span style="background:#00d9c0"></span><span style="background:#6c5ce7"></span><span style="background:#ff6b81"></span>
+      </div>
+      <span class="mb-ball"></span>
+      <span class="mb-paddle"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "whack-preview") {
+    return `<div class="card-thumb thumb-whack">
+      <div class="mini-holes">
+        <span class="wh"></span><span class="wh"></span><span class="wh"></span>
+        <span class="wh"></span><span class="wh up"></span><span class="wh"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
   if (game.thumbKind === "snake-preview") {
     return `<div class="card-thumb thumb-snake">
       <span class="ms-seg" style="left:20%;top:52%"></span>

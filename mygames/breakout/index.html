@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Phá Gạch</title>
+<link rel="stylesheet" href="/mygames/breakout/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Phá Gạch</h1>
+        <p>Đỡ bóng, phá hết gạch</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Mạng</span>
+          <span class="value" id="lives">3</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Phá Gạch</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm hoặc nhấn phím cách để thả bóng</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Kéo chuột / vuốt / phím mũi tên trái-phải để đỡ bóng.</p>
+  </div>
+<script src="/mygames/breakout/game.js"></script>
+</body>
+</html>

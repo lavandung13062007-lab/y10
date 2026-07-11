@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cờ Ca-rô</title>
+<link rel="stylesheet" href="/mygames/tictactoe/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Cờ Ca-rô</h1>
+        <p id="turnMsg">Đến lượt bạn (X)</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Bạn</span>
+          <span class="value" id="scoreYou">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Hòa</span>
+          <span class="value" id="scoreDraw">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Máy</span>
+          <span class="value" id="scoreAi">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="restartBtn" class="restart-btn">↻ Ván mới</button>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board"></div>
+      <div class="overlay hidden" id="overlay">
+        <div class="overlay-msg" id="overlayMsg"></div>
+        <button class="overlay-btn" id="overlayBtn">Chơi lại</button>
+      </div>
+    </div>
+    <p class="hint">Bạn là X, máy là O. Ai nối được 3 ô liền trước thì thắng.</p>
+  </div>
+<script src="/mygames/tictactoe/game.js"></script>
+</body>
+</html>
