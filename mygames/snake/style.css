@@ -24,7 +24,7 @@ body {
   user-select: none;
 }
 
-.wrap { width: 100%; max-width: min(400px, calc(100vh - 300px)); }
+.wrap { width: 100%; max-width: min(400px, calc(100vh - 260px)); }
 
 .topline {
   display: flex;
