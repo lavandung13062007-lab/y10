@@ -17,7 +17,16 @@
 
   <div class="play-layout">
     <div class="play-main">
-      <div class="stage" id="stage"></div>
+      <div class="stage-wrap">
+        <div class="stage" id="stage"></div>
+        <div class="ad-interstitial hidden" id="adInterstitial">
+          <video id="adVideo" playsinline muted></video>
+          <div class="ad-topbar">
+            <span class="ad-label">Quảng cáo</span>
+            <button class="ad-skip" id="adSkipBtn" disabled>Bỏ qua</button>
+          </div>
+        </div>
+      </div>
       <div class="play-meta">
         <h2 id="gameTitle">—</h2>
         <span class="tag" id="gameCat">—</span>
@@ -40,6 +49,7 @@
 
 <script src="games.js"></script>
 <script src="render-helpers.js"></script>
+<script src="ads.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
@@ -54,15 +64,7 @@
     relatedGrid.innerHTML = picks.map(g => cardMarkup(g, "related-card")).join("");
   }
 
-  if (!game) {
-    stage.innerHTML = `<div class="stage-placeholder"><div class="icon">❓</div>Không tìm thấy game này.</div>`;
-    renderRelated(null);
-  } else {
-    document.title = game.title + " — Y10";
-    document.getElementById("gameTitle").textContent = game.title;
-    document.getElementById("gameCat").textContent = game.category;
-    renderRelated(game.id);
-
+  function loadGameIntoStage() {
     if (game.embedUrl) {
       stage.innerHTML = `<iframe src="${game.embedUrl}" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>`;
     } else {
@@ -84,6 +86,69 @@
     } else {
       document.getElementById("gamePlays").textContent = `▶ ${game.plays} lượt chơi`;
     }
+  }
+
+  // Cứ mỗi AD_EVERY_N_PLAYS lần mở game (toàn site) thì chèn 1 quảng cáo video trước khi vào game.
+  function maybeShowAd(onDone) {
+    if (!AD_VIDEOS || AD_VIDEOS.length === 0) { onDone(); return; }
+
+    const KEY = "y10-play-visits";
+    const visits = parseInt(localStorage.getItem(KEY) || "0", 10) + 1;
+    localStorage.setItem(KEY, String(visits));
+    if (visits % AD_EVERY_N_PLAYS !== 0) { onDone(); return; }
+
+    const overlay = document.getElementById("adInterstitial");
+    const video = document.getElementById("adVideo");
+    const skipBtn = document.getElementById("adSkipBtn");
+    const src = AD_VIDEOS[Math.floor(Math.random() * AD_VIDEOS.length)];
+
+    let done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      clearInterval(timer);
+      overlay.classList.add("hidden");
+      video.pause();
+      video.removeAttribute("src");
+      onDone();
+    }
+
+    video.src = src;
+    video.onerror = finish; // chưa có file video / load lỗi -> bỏ qua, không chặn người chơi
+    video.onended = finish;
+    video.muted = false;
+    video.play().catch(() => {
+      // trình duyệt chặn autoplay có tiếng -> phát lại ở chế độ tắt tiếng
+      video.muted = true;
+      video.play().catch(() => {});
+    });
+
+    overlay.classList.remove("hidden");
+    let remaining = 5;
+    skipBtn.disabled = true;
+    skipBtn.textContent = `Bỏ qua (${remaining})`;
+    const timer = setInterval(() => {
+      remaining--;
+      if (remaining <= 0) {
+        clearInterval(timer);
+        skipBtn.disabled = false;
+        skipBtn.textContent = "Bỏ qua ▶";
+      } else {
+        skipBtn.textContent = `Bỏ qua (${remaining})`;
+      }
+    }, 1000);
+    skipBtn.onclick = () => { if (!skipBtn.disabled) finish(); };
+  }
+
+  if (!game) {
+    stage.innerHTML = `<div class="stage-placeholder"><div class="icon">❓</div>Không tìm thấy game này.</div>`;
+    renderRelated(null);
+  } else {
+    document.title = game.title + " — Y10";
+    document.getElementById("gameTitle").textContent = game.title;
+    document.getElementById("gameCat").textContent = game.category;
+    renderRelated(game.id);
+    maybeShowAd(loadGameIntoStage);
   }
 </script>
 </body>

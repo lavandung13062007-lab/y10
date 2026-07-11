@@ -3,7 +3,7 @@
 // thay "embedUrl" bằng URL nhúng thật của họ và "thumb" bằng ảnh thumbnail thật.
 
 // Dán URL Web App (từ Google Apps Script, xem play-stats.gs.txt) vào đây để bật đếm lượt chơi thật.
-const PLAY_STATS_URL = "";
+const PLAY_STATS_URL = "https://script.google.com/macros/s/AKfycbyJ4HbHKeSDK1IebsGLuUlfWnMRBWqZ3cTTHxtnGk6BrZ8RfhJE40UuPcJWCYgAC7HENg/exec";
 let playCounts = {};
 
 const GAMES = [
