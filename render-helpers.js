@@ -54,6 +54,38 @@ function thumbMarkup(game) {
       <span class="card-plays">▶ ${plays}</span>
     </div>`;
   }
+  if (game.thumbKind === "simon-preview") {
+    return `<div class="card-thumb thumb-simon">
+      <div class="mini-simon">
+        <span class="sp sp-0"></span><span class="sp sp-1"></span>
+        <span class="sp sp-2"></span><span class="sp sp-3 lit"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "connect4-preview") {
+    return `<div class="card-thumb thumb-connect4">
+      <div class="mini-c4">
+        <span></span><span class="you"></span><span class="ai"></span><span></span>
+        <span class="ai"></span><span class="you"></span><span class="ai"></span><span></span>
+        <span class="you"></span><span class="you"></span><span class="ai"></span><span class="you"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "minesweeper-preview") {
+    return `<div class="card-thumb thumb-mine">
+      <div class="mini-mine">
+        <span class="mm-c mm-num n1">1</span><span class="mm-c mm-num n2">2</span><span class="mm-c mm-hidden"></span>
+        <span class="mm-c mm-num n3">3</span><span class="mm-c mm-flag">🚩</span><span class="mm-c mm-hidden"></span>
+        <span class="mm-c mm-hidden"></span><span class="mm-c mm-hidden"></span><span class="mm-c mm-num n1">1</span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
   if (game.thumbKind === "caro-preview") {
     return `<div class="card-thumb thumb-caro">
       <div class="mini-caro">

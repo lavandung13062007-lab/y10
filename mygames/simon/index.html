@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Simon Nhớ Màu</title>
+<link rel="stylesheet" href="/mygames/simon/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Nhớ Màu</h1>
+        <p>Xem thứ tự sáng đèn rồi bấm lại đúng thứ tự</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Vòng</span>
+          <span class="value" id="round">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board">
+        <button class="pad pad-0" data-pad="0"></button>
+        <button class="pad pad-1" data-pad="1"></button>
+        <button class="pad pad-2" data-pad="2"></button>
+        <button class="pad pad-3" data-pad="3"></button>
+        <div class="center-dot" id="centerDot">?</div>
+      </div>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Nhớ Màu</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm bắt đầu, nhìn kỹ thứ tự đèn sáng</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Bấm đúng thứ tự vừa sáng lên, sai là thua.</p>
+  </div>
+<script src="/mygames/simon/game.js"></script>
+</body>
+</html>

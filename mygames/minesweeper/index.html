@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Dò Mìn</title>
+<link rel="stylesheet" href="/mygames/minesweeper/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Dò Mìn</h1>
+        <p>Mở hết ô an toàn, tránh đạp trúng mìn</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Mìn</span>
+          <span class="value" id="minesLeft">10</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Thời gian</span>
+          <span class="value" id="timer">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="flagModeBtn" class="mode-btn">🚩 Chế độ cắm cờ</button>
+      <button id="restartBtn" class="restart-btn">↻ Ván mới</button>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board"></div>
+      <div class="overlay hidden" id="overlay">
+        <div class="overlay-msg" id="overlayMsg"></div>
+        <button class="overlay-btn" id="overlayBtn">Chơi lại</button>
+      </div>
+    </div>
+    <p class="hint">Bấm để mở ô. Bật "chế độ cắm cờ" hoặc chuột phải để đánh dấu ô nghi có mìn.</p>
+  </div>
+<script src="/mygames/minesweeper/game.js"></script>
+</body>
+</html>

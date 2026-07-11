@@ -295,6 +295,67 @@ a { color: inherit; text-decoration: none; }
   background: var(--c);
 }
 
+.thumb-simon {
+  background: linear-gradient(135deg, #241a44, #12182a);
+}
+.thumb-simon .mini-simon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+  width: 56%;
+  height: 56%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.thumb-simon .sp { opacity: 0.4; }
+.thumb-simon .sp.lit { opacity: 1; }
+.thumb-simon .sp-0 { background: #ff6b81; }
+.thumb-simon .sp-1 { background: #ffd76e; }
+.thumb-simon .sp-2 { background: #00d9c0; }
+.thumb-simon .sp-3 { background: #8a7bff; }
+
+.thumb-connect4 {
+  background: linear-gradient(135deg, #241422, #12182a);
+}
+.thumb-connect4 .mini-c4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  width: 62%;
+  height: 50%;
+}
+.thumb-connect4 .mini-c4 span {
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+.thumb-connect4 .mini-c4 span.you { background: #ff6b81; }
+.thumb-connect4 .mini-c4 span.ai { background: #00d9c0; }
+
+.thumb-mine {
+  background: linear-gradient(135deg, #1a2436, #12182a);
+}
+.thumb-mine .mini-mine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  width: 56%;
+  height: 56%;
+}
+.thumb-mine .mm-c {
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+.thumb-mine .mm-hidden { background: #232d45; }
+.thumb-mine .mm-num { background: #10151f; }
+.thumb-mine .mm-flag { background: #232d45; font-size: 9px; }
+
 .thumb-caro {
   background: linear-gradient(135deg, #1e1a3d, #12182a);
 }
