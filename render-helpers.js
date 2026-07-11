@@ -42,6 +42,18 @@ function thumbMarkup(game) {
       <span class="card-plays">▶ ${plays}</span>
     </div>`;
   }
+  if (game.thumbKind === "memory-preview") {
+    return `<div class="card-thumb thumb-memory">
+      <div class="mini-cards">
+        <span class="mc mc-open" style="--c:hsl(165,70%,50%)"></span>
+        <span class="mc mc-back">?</span>
+        <span class="mc mc-back">?</span>
+        <span class="mc mc-open" style="--c:hsl(48,90%,60%)"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
   if (game.thumbKind === "snake-preview") {
     return `<div class="card-thumb thumb-snake">
       <span class="ms-seg" style="left:20%;top:52%"></span>

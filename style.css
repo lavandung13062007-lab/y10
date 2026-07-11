@@ -261,6 +261,40 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
+.thumb-memory {
+  background: linear-gradient(135deg, #241a44, #12182a);
+}
+.thumb-memory .mini-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  width: 62%;
+  height: 62%;
+}
+.thumb-memory .mc {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+.thumb-memory .mc-back {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-dim);
+}
+.thumb-memory .mc-open {
+  background: var(--bg-card);
+  border: 2px solid var(--c);
+}
+.thumb-memory .mc-open::after {
+  content: "";
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: var(--c);
+}
+
 .thumb-snake {
   background: linear-gradient(135deg, #16233d, #0f1420);
   position: relative;
