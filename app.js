@@ -45,7 +45,7 @@ function renderGrid() {
   }
 
   gameGrid.innerHTML = filtered.map(game => `
-    <a class="card" href="play?id=${game.id}">
+    <a class="card" href="play.html?id=${game.id}">
       <div class="card-thumb" style="background:linear-gradient(135deg, hsl(${game.hue},70%,45%), hsl(${game.hue + 40},70%,30%))">
         ${initials(game.title)}
         ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
