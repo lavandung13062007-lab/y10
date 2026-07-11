@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kéo Búa Bao</title>
+<link rel="stylesheet" href="/mygames/rps/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Kéo Búa Bao</h1>
+        <p id="msg">Chọn 1 để bắt đầu</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Bạn</span>
+          <span class="value" id="scoreYou">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Hòa</span>
+          <span class="value" id="scoreDraw">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Máy</span>
+          <span class="value" id="scoreAi">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arena">
+      <div class="hand you-hand" id="youHand">✊</div>
+      <div class="vs">VS</div>
+      <div class="hand ai-hand" id="aiHand">✊</div>
+    </div>
+
+    <div class="choices">
+      <button class="choice-btn" data-choice="rock">✊<span>Búa</span></button>
+      <button class="choice-btn" data-choice="paper">✋<span>Bao</span></button>
+      <button class="choice-btn" data-choice="scissors">✌️<span>Kéo</span></button>
+    </div>
+    <p class="hint">Kéo thắng bao, bao thắng búa, búa thắng kéo.</p>
+  </div>
+<script src="/mygames/rps/game.js"></script>
+</body>
+</html>

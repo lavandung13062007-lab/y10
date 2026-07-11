@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sudoku Mini</title>
+<link rel="stylesheet" href="/mygames/sudoku/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Sudoku Mini</h1>
+        <p>Điền 1-6, không lặp trong hàng/cột/ô vuông</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Thời gian</span>
+          <span class="value" id="timer">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="restartBtn" class="restart-btn">↻ Ván mới</button>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board"></div>
+      <div class="overlay hidden" id="overlay">
+        <div class="overlay-msg" id="overlayMsg"></div>
+        <button class="overlay-btn" id="overlayBtn">Chơi lại</button>
+      </div>
+    </div>
+
+    <div class="numpad" id="numpad">
+      <button data-n="1">1</button><button data-n="2">2</button><button data-n="3">3</button>
+      <button data-n="4">4</button><button data-n="5">5</button><button data-n="6">6</button>
+      <button data-n="0" class="clear-btn">Xóa</button>
+    </div>
+    <p class="hint">Chạm 1 ô trống rồi bấm số. Ô sai sẽ hiện đỏ.</p>
+  </div>
+<script src="/mygames/sudoku/game.js"></script>
+</body>
+</html>

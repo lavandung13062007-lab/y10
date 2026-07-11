@@ -295,6 +295,182 @@ a { color: inherit; text-decoration: none; }
   background: var(--c);
 }
 
+.thumb-jumper {
+  background: linear-gradient(135deg, #241a44, #12182a);
+  position: relative;
+}
+.thumb-jumper .jp-plat {
+  position: absolute;
+  width: 22%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg,#00d9c0,#4ea8ff);
+}
+.thumb-jumper .jp-char {
+  position: absolute;
+  left: 42%;
+  bottom: 55%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9f43;
+}
+
+.thumb-basketball {
+  background: linear-gradient(135deg, #241a10, #12182a);
+  position: relative;
+}
+.thumb-basketball .bk-hoop {
+  position: absolute;
+  top: 22%;
+  left: 30%;
+  width: 40%;
+  height: 4px;
+  background: #ff6b81;
+  border-radius: 2px;
+}
+.thumb-basketball .bk-ball {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9f43;
+  transform: translateX(-50%);
+}
+
+.thumb-blockpuzzle {
+  background: linear-gradient(135deg, #2a1a3d, #12182a);
+}
+.thumb-blockpuzzle .mini-bp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+  width: 56%;
+  height: 56%;
+}
+.thumb-blockpuzzle .mini-bp span { border-radius: 2px; background: transparent; }
+.thumb-blockpuzzle .mini-bp span:not(.on) { background: rgba(255,255,255,0.06); }
+
+.thumb-bubblepop {
+  background: linear-gradient(135deg, #10233d, #12182a);
+}
+.thumb-bubblepop .mini-bubbles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  width: 56%;
+  height: 40%;
+}
+.thumb-bubblepop .mini-bubbles span { border-radius: 50%; }
+
+.thumb-sudoku {
+  background: linear-gradient(135deg, #1a2436, #12182a);
+}
+.thumb-sudoku .mini-sudoku {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  width: 50%;
+  height: 50%;
+}
+.thumb-sudoku .mini-sudoku span {
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-2);
+}
+
+.thumb-rps {
+  background: linear-gradient(135deg, #241a10, #12182a);
+  gap: 10px;
+}
+.thumb-rps .rp-emoji { font-size: 26px; }
+.thumb-rps .rp-vs { font-size: 11px; font-weight: 800; color: var(--text-dim); }
+
+.thumb-guessnum {
+  background: linear-gradient(135deg, #10233d, #12182a);
+}
+.thumb-guessnum .mini-digits {
+  display: flex;
+  gap: 5px;
+}
+.thumb-guessnum .mini-digits span {
+  width: 22px;
+  height: 28px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--accent-2);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.thumb-pong {
+  background: linear-gradient(135deg, #10233d, #12182a);
+  position: relative;
+}
+.thumb-pong .pp-paddle {
+  position: absolute;
+  left: 50%;
+  width: 34%;
+  height: 6px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+}
+.thumb-pong .pp-top { top: 16%; background: #ff9f43; }
+.thumb-pong .pp-bottom { bottom: 16%; background: linear-gradient(90deg,#8a7bff,#00d9c0); }
+.thumb-pong .pp-ball {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%,-50%);
+}
+
+.thumb-stack {
+  background: linear-gradient(135deg, #1a2e22, #12182a);
+}
+.thumb-stack .mini-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3px;
+  width: 70%;
+}
+.thumb-stack .mini-stack span { height: 9px; border-radius: 2px; }
+
+.thumb-lanedodge {
+  background: linear-gradient(135deg, #241a10, #12182a);
+  position: relative;
+}
+.thumb-lanedodge .ld-lane {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.25) 0 6px, transparent 6px 12px);
+}
+.thumb-lanedodge .ld-lane:nth-of-type(1) { left: 33%; }
+.thumb-lanedodge .ld-lane:nth-of-type(2) { left: 66%; }
+.thumb-lanedodge .ld-car {
+  position: absolute;
+  width: 14px; height: 22px;
+  border-radius: 4px;
+}
+.thumb-lanedodge .ld-car-1 { left: 16%; top: 22%; }
+.thumb-lanedodge .ld-car-2 { left: 46%; bottom: 20%; }
+
 .thumb-simon {
   background: linear-gradient(135deg, #241a44, #12182a);
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nhảy Lên Cao</title>
+<link rel="stylesheet" href="/mygames/jumper/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Nhảy Lên Cao</h1>
+        <p>Nhảy càng cao càng nhiều điểm, đừng để rơi</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Nhảy Lên Cao</div>
+        <div class="overlay-msg" id="overlayMsg">Giữ trái/phải màn hình hoặc phím mũi tên để di chuyển</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Giữ nửa trái/phải màn hình hoặc phím mũi tên để né và hạ đúng bệ.</p>
+  </div>
+<script src="/mygames/jumper/game.js"></script>
+</body>
+</html>

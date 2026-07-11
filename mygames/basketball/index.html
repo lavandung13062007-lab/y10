@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ném Bóng Rổ</title>
+<link rel="stylesheet" href="/mygames/basketball/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Ném Bóng Rổ</h1>
+        <p>Kéo bóng rồi thả để ném vào rổ</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Thời gian</span>
+          <span class="value" id="timeLeft">40</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Ném Bóng Rổ</div>
+        <div class="overlay-msg" id="overlayMsg">40 giây, ném càng nhiều càng tốt</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Kéo bóng xuống rồi thả ra để ném lên rổ, giống bắn ná.</p>
+  </div>
+<script src="/mygames/basketball/game.js"></script>
+</body>
+</html>

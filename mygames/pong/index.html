@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bóng Bàn</title>
+<link rel="stylesheet" href="/mygames/pong/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Bóng Bàn</h1>
+        <p>Ai đến 5 điểm trước thì thắng</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Bạn</span>
+          <span class="value" id="scoreYou">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Máy</span>
+          <span class="value" id="scoreAi">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Bóng Bàn</div>
+        <div class="overlay-msg" id="overlayMsg">Kéo để di chuyển vợt của bạn ở dưới</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Kéo chuột / vuốt ngang để di chuyển vợt.</p>
+  </div>
+<script src="/mygames/pong/game.js"></script>
+</body>
+</html>

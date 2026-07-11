@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Xếp Tháp</title>
+<link rel="stylesheet" href="/mygames/stack/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Xếp Tháp</h1>
+        <p>Bấm đúng lúc để xếp khối thẳng hàng</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Tầng</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Xếp Tháp</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm để thả khối, càng thẳng hàng càng tốt</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Bấm / chạm màn hình đúng lúc khối trượt tới vị trí thẳng hàng.</p>
+  </div>
+<script src="/mygames/stack/game.js"></script>
+</body>
+</html>

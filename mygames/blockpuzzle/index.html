@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Xếp Khối</title>
+<link rel="stylesheet" href="/mygames/blockpuzzle/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Xếp Khối</h1>
+        <p>Chọn khối rồi bấm vào bàn cờ, lấp đầy hàng/cột để dọn</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="restartBtn" class="restart-btn">↻ Ván mới</button>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board"></div>
+      <div class="overlay hidden" id="overlay">
+        <div class="overlay-msg" id="overlayMsg"></div>
+        <button class="overlay-btn" id="overlayBtn">Chơi lại</button>
+      </div>
+    </div>
+
+    <div class="tray" id="tray"></div>
+    <p class="hint">Bấm chọn 1 khối bên dưới, rồi bấm vào ô muốn đặt trên bàn cờ.</p>
+  </div>
+<script src="/mygames/blockpuzzle/game.js"></script>
+</body>
+</html>

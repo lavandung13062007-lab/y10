@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Đua Xe Né Làn</title>
+<link rel="stylesheet" href="/mygames/lanedodge/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Né Làn</h1>
+        <p>Né xe khác, đi càng xa càng nhiều điểm</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Né Làn</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm trái/phải màn hình hoặc phím mũi tên để đổi làn</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Bấm nửa trái/phải màn hình hoặc phím mũi tên trái-phải để đổi làn.</p>
+  </div>
+<script src="/mygames/lanedodge/game.js"></script>
+</body>
+</html>

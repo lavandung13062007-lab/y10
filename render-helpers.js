@@ -54,6 +54,103 @@ function thumbMarkup(game) {
       <span class="card-plays">▶ ${plays}</span>
     </div>`;
   }
+  if (game.thumbKind === "rps-preview") {
+    return `<div class="card-thumb thumb-rps">
+      <span class="rp-emoji">✊</span><span class="rp-vs">VS</span><span class="rp-emoji">✋</span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "guessnum-preview") {
+    return `<div class="card-thumb thumb-guessnum">
+      <div class="mini-digits">
+        <span>3</span><span>7</span><span>1</span><span>9</span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "pong-preview") {
+    return `<div class="card-thumb thumb-pong">
+      <span class="pp-paddle pp-top"></span>
+      <span class="pp-ball"></span>
+      <span class="pp-paddle pp-bottom"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "stack-preview") {
+    return `<div class="card-thumb thumb-stack">
+      <div class="mini-stack">
+        <span style="width:70%;background:hsl(165,60%,50%)"></span>
+        <span style="width:55%;background:hsl(190,60%,50%)"></span>
+        <span style="width:40%;background:hsl(220,60%,55%)"></span>
+        <span style="width:65%;background:hsl(250,60%,55%)"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "lanedodge-preview") {
+    return `<div class="card-thumb thumb-lanedodge">
+      <span class="ld-lane"></span><span class="ld-lane"></span>
+      <span class="ld-car ld-car-1" style="background:#ff6b81"></span>
+      <span class="ld-car ld-car-2" style="background:#00d9c0"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "jumper-preview") {
+    return `<div class="card-thumb thumb-jumper">
+      <span class="jp-plat" style="left:20%;bottom:15%"></span>
+      <span class="jp-plat" style="left:55%;bottom:45%"></span>
+      <span class="jp-plat" style="left:25%;bottom:75%"></span>
+      <span class="jp-char"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "basketball-preview") {
+    return `<div class="card-thumb thumb-basketball">
+      <span class="bk-hoop"></span>
+      <span class="bk-ball"></span>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "blockpuzzle-preview") {
+    return `<div class="card-thumb thumb-blockpuzzle">
+      <div class="mini-bp">
+        <span class="on" style="background:hsl(165,60%,50%)"></span><span class="on" style="background:hsl(165,60%,50%)"></span><span></span><span class="on" style="background:hsl(30,80%,55%)"></span>
+        <span></span><span class="on" style="background:hsl(255,60%,60%)"></span><span></span><span class="on" style="background:hsl(30,80%,55%)"></span>
+        <span class="on" style="background:hsl(340,70%,60%)"></span><span class="on" style="background:hsl(255,60%,60%)"></span><span></span><span></span>
+        <span class="on" style="background:hsl(340,70%,60%)"></span><span></span><span class="on" style="background:hsl(200,70%,55%)"></span><span class="on" style="background:hsl(200,70%,55%)"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "bubblepop-preview") {
+    return `<div class="card-thumb thumb-bubblepop">
+      <div class="mini-bubbles">
+        <span style="background:#ff6b81"></span><span style="background:#ffd76e"></span><span style="background:#00d9c0"></span>
+        <span style="background:#ff6b81"></span><span style="background:#4ea8ff"></span><span style="background:#00d9c0"></span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
+  if (game.thumbKind === "sudoku-preview") {
+    return `<div class="card-thumb thumb-sudoku">
+      <div class="mini-sudoku">
+        <span>1</span><span>2</span><span></span>
+        <span></span><span>4</span><span>5</span>
+        <span>3</span><span></span><span>6</span>
+      </div>
+      ${game.isNew ? '<span class="card-badge">MỚI</span>' : ""}
+      <span class="card-plays">▶ ${plays}</span>
+    </div>`;
+  }
   if (game.thumbKind === "simon-preview") {
     return `<div class="card-thumb thumb-simon">
       <div class="mini-simon">

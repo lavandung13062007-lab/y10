@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Đoán Số</title>
+<link rel="stylesheet" href="/mygames/guessnum/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Đoán Số</h1>
+        <p>Đoán đúng 4 chữ số bí mật (không lặp lại)</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Lượt</span>
+          <span class="value" id="attempts">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="restartBtn" class="restart-btn">↻ Số mới</button>
+    </div>
+
+    <div class="digit-display" id="digitDisplay">
+      <span class="digit-slot" data-i="0"></span>
+      <span class="digit-slot" data-i="1"></span>
+      <span class="digit-slot" data-i="2"></span>
+      <span class="digit-slot" data-i="3"></span>
+    </div>
+    <div class="feedback" id="feedback">Nhập 4 chữ số khác nhau rồi bấm Đoán</div>
+
+    <div class="keypad" id="keypad">
+      <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+      <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+      <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+      <button data-key="clear" class="wide">Xóa</button><button data-key="0">0</button><button data-key="guess" class="wide accent">Đoán</button>
+    </div>
+
+    <div class="history" id="history"></div>
+  </div>
+<script src="/mygames/guessnum/game.js"></script>
+</body>
+</html>
