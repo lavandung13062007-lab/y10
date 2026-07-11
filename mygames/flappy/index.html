@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Flappy</title>
+<link rel="stylesheet" href="/mygames/flappy/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>Flappy</h1>
+        <p>Bấm để bay, né qua các cột ống</p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-outer">
+      <canvas id="canvas"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-title" id="overlayTitle">Flappy</div>
+        <div class="overlay-msg" id="overlayMsg">Bấm hoặc nhấn phím cách để bắt đầu</div>
+        <button class="overlay-btn" id="overlayBtn">Bắt đầu</button>
+      </div>
+    </div>
+    <p class="hint">Bấm chuột / chạm màn hình / phím cách để bay lên.</p>
+  </div>
+<script src="/mygames/flappy/game.js"></script>
+</body>
+</html>

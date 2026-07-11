@@ -2,7 +2,8 @@
 // Khi có tài khoản developer (GameDistribution / CrazyGames / Poki for Developers),
 // thay "embedUrl" bằng URL nhúng thật của họ và "thumb" bằng ảnh thumbnail thật.
 const GAMES = [
-  { id: "y9-2048", title: "2048", category: "Giải Đố", hue: 275, plays: "0", isNew: true, embedUrl: "/mygames/2048/index.html" },
+  { id: "y9-2048", title: "2048", category: "Giải Đố", hue: 275, plays: "0", isNew: true, embedUrl: "/mygames/2048/index.html", thumbKind: "2048-grid" },
+  { id: "y9-flappy", title: "Flappy", category: "Kỹ Năng", hue: 190, plays: "0", isNew: true, embedUrl: "/mygames/flappy/index.html", thumbKind: "flappy-preview" },
   { id: "moto-rush", title: "Moto Rush", category: "Đua Xe", hue: 205, plays: "128K", isNew: true, embedUrl: "" },
   { id: "block-blast", title: "Block Blast Saga", category: "Giải Đố", hue: 45, plays: "89K", isNew: true, embedUrl: "" },
   { id: "zombie-siege", title: "Zombie Siege", category: "Bắn Súng", hue: 350, plays: "212K", isNew: false, embedUrl: "" },
@@ -17,4 +18,4 @@ const GAMES = [
   { id: "snake-rivals", title: "Little Big Snake", category: "Game .IO", hue: 155, plays: "233K", isNew: false, embedUrl: "" },
 ];
 
-const CATEGORIES = ["Tất Cả", "Game Mới", "Đua Xe", "Bắn Súng", "Giải Đố", "Thể Thao", "Game .IO", "Kinh Dị", "Đối Kháng"];
+const CATEGORIES = ["Tất Cả", "Game Mới", "Đua Xe", "Bắn Súng", "Giải Đố", "Thể Thao", "Game .IO", "Kinh Dị", "Đối Kháng", "Kỹ Năng"];
