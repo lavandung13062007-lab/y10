@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>2048</title>
+<link rel="stylesheet" href="/mygames/2048/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <div class="title-block">
+        <h1>2048</h1>
+        <p>Gộp các ô cùng số để đạt <strong>2048</strong></p>
+      </div>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Điểm</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Kỷ lục</span>
+          <span class="value" id="best">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="restartBtn" class="restart-btn">↻ Chơi lại</button>
+    </div>
+
+    <div class="board-outer">
+      <div class="board" id="board">
+        <div class="grid-bg" id="gridBg"></div>
+        <div class="tile-layer" id="tileLayer"></div>
+        <div class="overlay hidden" id="overlay">
+          <div class="overlay-msg" id="overlayMsg"></div>
+          <button class="overlay-btn" id="overlayBtn">Chơi lại</button>
+        </div>
+      </div>
+    </div>
+    <p class="hint">Dùng phím mũi tên hoặc vuốt để di chuyển.</p>
+  </div>
+<script src="/mygames/2048/game.js"></script>
+</body>
+</html>

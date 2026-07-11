@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đang chơi — Y9</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="logo">Y9</a>
+</header>
+
+<main class="play-shell">
+  <div class="back-link" onclick="window.location.href='index.html'">&larr; Quay lại danh sách game</div>
+  <div class="stage" id="stage"></div>
+  <div class="play-meta">
+    <h2 id="gameTitle">—</h2>
+    <span class="tag" id="gameCat">—</span>
+  </div>
+</main>
+
+<script src="games.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const game = GAMES.find(g => g.id === id);
+  const stage = document.getElementById("stage");
+
+  if (!game) {
+    stage.innerHTML = `<div class="stage-placeholder"><div class="icon">❓</div>Không tìm thấy game này.</div>`;
+  } else {
+    document.title = game.title + " — Y9";
+    document.getElementById("gameTitle").textContent = game.title;
+    document.getElementById("gameCat").textContent = game.category;
+
+    if (game.embedUrl) {
+      stage.innerHTML = `<iframe src="${game.embedUrl}" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>`;
+    } else {
+      stage.innerHTML = `<div class="stage-placeholder">
+        <div class="icon">🎮</div>
+        <strong>${game.title}</strong> chưa có bản nhúng.<br>
+        Điền URL nhúng thật (từ GameDistribution / CrazyGames / Poki for Developers) vào
+        <code>embedUrl</code> trong <code>games.js</code> để game này chạy được ở đây.
+      </div>`;
+    }
+  }
+</script>
+</body>
+</html>

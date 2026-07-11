@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y9 — Chơi Game Miễn Phí</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">Y9</div>
+  <nav class="nav-scroll" id="navScroll"></nav>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="searchInput" placeholder="Tìm tên game...">
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Chơi game miễn phí, không cần cài đặt</h1>
+  <p>Hàng trăm game hay mỗi ngày — đua xe, bắn súng, giải đố, thể thao và nhiều hơn nữa. Chơi ngay trên trình duyệt.</p>
+</section>
+
+<main class="page">
+  <div class="section-title"><span class="dot"></span><span id="resultLabel">Tất Cả Game</span></div>
+  <div class="grid" id="gameGrid"></div>
+</main>
+
+<script src="games.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
