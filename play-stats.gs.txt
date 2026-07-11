@@ -1,0 +1,80 @@
+// === Y10 — Đếm lượt chơi thật ===
+// Cách dùng:
+// 1. Tạo 1 Google Sheet mới (trống, không cần đặt tên gì đặc biệt).
+// 2. Vào Tiện ích mở rộng > Apps Script, xóa hết code mặc định, dán toàn bộ file này vào.
+// 3. Bấm Deploy > New deployment > chọn loại "Web app".
+//      - Execute as: Me
+//      - Who has access: Anyone
+// 4. Copy URL kết thúc bằng /exec, dán vào PLAY_STATS_URL trong games.js.
+// 5. Mỗi khi sửa code này, phải Deploy > Manage deployments > bút chì > Version: New version > Deploy
+//    (URL không đổi, chỉ cần bấm New version).
+
+const SHEET_NAME = "PlayCounts";
+const HEADERS = ["GameID", "Count"];
+
+function getSheet_() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+    sheet.appendRow(HEADERS);
+    return sheet;
+  }
+  const lastCol = sheet.getLastColumn();
+  if (lastCol < HEADERS.length) {
+    sheet.getRange(1, lastCol + 1, 1, HEADERS.length - lastCol).setValues([HEADERS.slice(lastCol)]);
+  }
+  return sheet;
+}
+
+function findRow_(sheet, gameId) {
+  const data = sheet.getDataRange().getValues();
+  for (let i = 1; i < data.length; i++) {
+    if (data[i][0] === gameId) return i + 1;
+  }
+  return -1;
+}
+
+function incrementPlay_(gameId) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    const sheet = getSheet_();
+    const row = findRow_(sheet, gameId);
+    if (row === -1) {
+      sheet.appendRow([gameId, 1]);
+      return 1;
+    }
+    const cell = sheet.getRange(row, 2);
+    const newCount = (Number(cell.getValue()) || 0) + 1;
+    cell.setValue(newCount);
+    return newCount;
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function getAllCounts_() {
+  const sheet = getSheet_();
+  const data = sheet.getDataRange().getValues();
+  const result = {};
+  for (let i = 1; i < data.length; i++) {
+    if (data[i][0]) result[data[i][0]] = Number(data[i][1]) || 0;
+  }
+  return result;
+}
+
+function jsonOutput_(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+function doGet(e) {
+  const action = e.parameter.action;
+  if (action === "play" && e.parameter.id) {
+    return jsonOutput_({ id: e.parameter.id, count: incrementPlay_(e.parameter.id) });
+  }
+  if (action === "counts") {
+    return jsonOutput_(getAllCounts_());
+  }
+  return jsonOutput_({ error: "unknown action" });
+}

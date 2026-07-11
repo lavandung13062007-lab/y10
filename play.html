@@ -14,26 +14,54 @@
 
 <main class="play-shell">
   <div class="back-link" onclick="window.location.href='index.html'">&larr; Quay lại danh sách game</div>
-  <div class="stage" id="stage"></div>
-  <div class="play-meta">
-    <h2 id="gameTitle">—</h2>
-    <span class="tag" id="gameCat">—</span>
+
+  <div class="play-layout">
+    <div class="play-main">
+      <div class="stage" id="stage"></div>
+      <div class="play-meta">
+        <h2 id="gameTitle">—</h2>
+        <span class="tag" id="gameCat">—</span>
+        <span class="tag" id="gamePlays"></span>
+      </div>
+      <div class="ad-slot ad-slot-banner" id="adBanner">
+        <span>Vị trí quảng cáo</span>
+      </div>
+    </div>
+
+    <aside class="related">
+      <h3>Game khác</h3>
+      <div class="related-grid" id="relatedGrid"></div>
+      <div class="ad-slot ad-slot-sidebar" id="adSidebar">
+        <span>Vị trí quảng cáo</span>
+      </div>
+    </aside>
   </div>
 </main>
 
 <script src="games.js"></script>
+<script src="render-helpers.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const game = GAMES.find(g => g.id === id);
   const stage = document.getElementById("stage");
+  const relatedGrid = document.getElementById("relatedGrid");
+
+  function renderRelated(excludeId) {
+    const sameCategory = GAMES.filter(g => g.id !== excludeId && g.category === (game ? game.category : ""));
+    const others = GAMES.filter(g => g.id !== excludeId && !sameCategory.includes(g));
+    const picks = [...sameCategory, ...others].slice(0, 8);
+    relatedGrid.innerHTML = picks.map(g => cardMarkup(g, "related-card")).join("");
+  }
 
   if (!game) {
     stage.innerHTML = `<div class="stage-placeholder"><div class="icon">❓</div>Không tìm thấy game này.</div>`;
+    renderRelated(null);
   } else {
     document.title = game.title + " — Y10";
     document.getElementById("gameTitle").textContent = game.title;
     document.getElementById("gameCat").textContent = game.category;
+    renderRelated(game.id);
 
     if (game.embedUrl) {
       stage.innerHTML = `<iframe src="${game.embedUrl}" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>`;
@@ -44,6 +72,17 @@
         Điền URL nhúng thật (từ GameDistribution / CrazyGames / Poki for Developers) vào
         <code>embedUrl</code> trong <code>games.js</code> để game này chạy được ở đây.
       </div>`;
+    }
+
+    if (PLAY_STATS_URL) {
+      fetch(`${PLAY_STATS_URL}?action=play&id=${game.id}`)
+        .then(r => r.json())
+        .then(data => {
+          document.getElementById("gamePlays").textContent = `▶ ${formatPlays(data.count)} lượt chơi`;
+        })
+        .catch(() => {});
+    } else {
+      document.getElementById("gamePlays").textContent = `▶ ${game.plays} lượt chơi`;
     }
   }
 </script>
